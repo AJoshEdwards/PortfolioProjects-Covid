@@ -111,15 +111,15 @@ order by
 --Query 1
 --Infection rate with Population by Continent
 with cte as (            -- this first CTE displays all Countries and their Population
-				select  
-				continent,
-				location,
-				population,
-				max(cast(total_cases as int)) as TotalCases
-				from CovidDeaths
-				where continent is not null
-				group by continent,location,population
-			) 
+		select  
+		continent,
+		location,
+		population,
+		max(cast(total_cases as int)) as TotalCases
+		from CovidDeaths
+		where continent is not null
+		group by continent,location,population
+	    ) 
 select 
 	cte.continent,
 	sum(cte.population) as Population,
@@ -208,15 +208,15 @@ order by 1
 
 --Global Numbers Total Cases and Deaths
 with cte as (
-				select  				
-				location,
-				case when population is null then 0 else population end as Population,
-				max(case when cast(total_cases as int) is null then 0 else cast(total_cases as int) end) as TotalCases,
-				max(case when cast(total_deaths as int) is null then 0 else cast(total_deaths as int) end) as TotalDeaths
-				from CovidDeaths
-				where continent is not null
-				group by location,population
-			) 
+		select  				
+		location,
+		case when population is null then 0 else population end as Population,
+		max(case when cast(total_cases as int) is null then 0 else cast(total_cases as int) end) as TotalCases,
+		max(case when cast(total_deaths as int) is null then 0 else cast(total_deaths as int) end) as TotalDeaths
+		from CovidDeaths
+		where continent is not null
+		group by location,population
+		) 
 select 
 	sum(cte.population) as Population,
 	sum(cte.TotalCases) as TotalCases,
