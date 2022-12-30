@@ -7,7 +7,7 @@ Utilising SQL to explore the data extract and Power BI to demonstrate different 
 There are 3 files within this Project: <br>
 &nbsp; &nbsp; • SQL file with all the queries I used to explore the data along with comments explaining what I'm investigating and how the query works.<br>
 &nbsp; &nbsp; • PDF file with snapshots of the 2 page PowerBI dashboard for easy user viewing.<br>
-&nbsp; &nbsp; • Power BI template file for the full interactive viewing, including a world map plugin to see each Countries Covid related information.<br>
+&nbsp; &nbsp; • Power BI template file for the full interactive viewing.<br>
 
 --------
 
